@@ -1,0 +1,9 @@
+th:not(:first-child){
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
