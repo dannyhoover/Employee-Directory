@@ -28,8 +28,11 @@ function App() {
 
   return (
     <div className="container">
+      <div className="header">EMPLOYEE DIRECTORY</div>
       <input
+        placeholder="Search a name"
         type="text"
+        className="textBox"
         value={nameFilter}
         onChange={(e) => setNameFilter(e.target.value)}
       />

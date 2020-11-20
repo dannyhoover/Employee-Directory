@@ -7,3 +7,21 @@ th:not(:first-child){
   flex-direction: column;
   text-align: center;
 }
+
+.textBox {
+  width: 225px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.header {
+  font-size: xx-large;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(172, 117, 0);
+  padding-bottom: 20px;
+}
+
+table {
+  padding-top: 20px;
+}
