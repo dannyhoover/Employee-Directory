@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const tableHeaders = ["Name", "Email", "Phone", "DoB"];
+const tableHeaders = ["name", "email", "phone", "dob"];
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -13,20 +13,17 @@ function App() {
     fetch("https://randomuser.me/api/?nat=us&results=10").then(async (res) => {
       if (!res.ok) throw new Error("failed to get employees");
       const { results } = await res.json();
-      console.log(results);
       setEmployees(() =>
         results.map(({ name, picture, email, phone, dob }) => ({
           picture,
           name,
           email,
           phone,
-          dob,
+          dob
         }))
       );
     });
   }, []);
-
-
 
   const nameRegex = new RegExp(nameFilter, "i");
 
