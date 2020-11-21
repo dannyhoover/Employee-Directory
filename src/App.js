@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const tableHeaders = ["name", "email", "phone"];
+const tableHeaders = ["Name", "Email", "Phone", "DoB"];
 
 function App() {
   const [employees, setEmployees] = useState([]);
@@ -13,22 +13,29 @@ function App() {
     fetch("https://randomuser.me/api/?nat=us&results=10").then(async (res) => {
       if (!res.ok) throw new Error("failed to get employees");
       const { results } = await res.json();
+      console.log(results);
       setEmployees(() =>
-        results.map(({ name, picture, email, phone }) => ({
+        results.map(({ name, picture, email, phone, dob }) => ({
           picture,
           name,
           email,
           phone,
+          dob,
         }))
       );
     });
   }, []);
+
+
 
   const nameRegex = new RegExp(nameFilter, "i");
 
   return (
     <div className="container">
       <div className="header">EMPLOYEE DIRECTORY</div>
+      <div className="subHeader">
+        Click a column name to sort or type a name to narrow your results
+      </div>
       <input
         placeholder="Search a name"
         type="text"
@@ -75,7 +82,7 @@ function App() {
               else if (a[sortField] < b[sortField]) return -sortDirection;
               return 0;
             })
-            .map(({ picture, name, email, phone }, i) => (
+            .map(({ picture, name, email, phone, dob }, i) => (
               <tr key={i}>
                 <td>
                   <img src={picture.thumbnail} />
@@ -83,6 +90,7 @@ function App() {
                 <td>{name.first + " " + name.last}</td>
                 <td>{email}</td>
                 <td>{phone}</td>
+                <td>{dob.date}</td>
               </tr>
             ))}
         </tbody>

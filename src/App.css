@@ -19,7 +19,11 @@ th:not(:first-child){
   font-size: xx-large;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: rgb(172, 117, 0);
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.subHeader {
+  padding-bottom: 10px;
 }
 
 table {
