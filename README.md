@@ -1,10 +1,8 @@
 # Employee-Directory
 
-## Unit 19 React Homework: Employee Directory
-
 ### Overview
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+This application is a React Employee Directory where the user can input new data into a database for aspects of multiple teams and employees.
 
 ### User Story
 
